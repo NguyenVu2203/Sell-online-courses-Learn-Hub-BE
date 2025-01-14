@@ -150,7 +150,7 @@ class KhachHangController extends Controller
     public function login(Request $request)
     {
         $res = Http::get("https://www.google.com/recaptcha/api/siteverify", [
-            'secret' => '6LcGsYwqAAAAAH1QBZe0LLmO9GegR0fHDOMnr3KT',
+            'secret' => '6LdlsIwqAAAAAEPuXUxeDHHBwCGZxgJNFB37hYo_',
             'response' => $request->code
         ]);
         if ($res->json()["success"] == true) {

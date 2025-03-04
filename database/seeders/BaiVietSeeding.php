@@ -51,7 +51,7 @@ class BaiVietSeeding extends Seeder
             [
                 'tieu_de' => 'Du lịch Hội An - Phố cổ giữa lòng miền Trung',
                 'slug_tieu_de' => 'du-lich-hoi-an-pho-co',
-                'link' => 'https://hoiana.com/vn/blog/pho-co-hoi-an/?utm_source', 
+                'link' => 'https://vnexpress.net/cam-nang-du-lich-hoi-an-4446174.html', 
                 'hinh_anh' => 'https://i2.ex-cdn.com/crystalbay.com/files/content/2024/06/03/du-lich-hoi-an-1-1542.jpg',
                 'mo_ta_ngan' => 'Hội An, di sản văn hóa thế giới với vẻ đẹp cổ kính và yên bình.',
                 'noi_dung' => 'Phố cổ Hội An là điểm đến nổi tiếng với kiến trúc độc đáo...',

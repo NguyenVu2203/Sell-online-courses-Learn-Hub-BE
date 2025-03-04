@@ -18,8 +18,8 @@ class BaiVietRequest extends FormRequest
             'tieu_de'           => 'required|min:4|max:100',
             'slug_tieu_de'      => 'required|min:4|max:100',
             'hinh_anh'          => 'required',
-            'mo_ta_ngan'        => 'required|min:10',
-            'noi_dung'          => 'required|min:20',
+            'mo_ta_ngan'        => 'required|min:50',
+            'noi_dung'          => 'required|min:50',
             'tinh_trang'        => 'required|boolean',
         ];
     }
@@ -37,10 +37,10 @@ class BaiVietRequest extends FormRequest
             'hinh_anh.required'     => 'Hình ảnh là bắt buộc.',
 
             'mo_ta_ngan.required'   => 'Mô tả ngắn là bắt buộc.',
-            'mo_ta_ngan.min'        => 'Mô tả ngắn phải có ít nhất 10 ký tự.',
+            'mo_ta_ngan.min'        => 'Mô tả ngắn phải có ít nhất 50 ký tự.',
 
             'noi_dung.required'     => 'Nội dung là bắt buộc.',
-            'noi_dung.min'          => 'Nội dung phải có ít nhất 20 ký tự.',
+            'noi_dung.min'          => 'Nội dung phải có ít nhất 50 ký tự.',
 
             'tinh_trang.required'   => 'Tình trạng là bắt buộc.',
             'tinh_trang.boolean'    => 'Tình trạng phải là giá trị boolean.',

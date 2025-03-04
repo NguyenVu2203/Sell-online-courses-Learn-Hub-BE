@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
+use App\Http\Requests\KhachHangNapTienRequest;
+
 
 class KhachHangController extends Controller
 {
@@ -149,8 +151,12 @@ class KhachHangController extends Controller
     }
     public function login(Request $request)
     {
+        // $res = Http::get("https://www.google.com/recaptcha/api/siteverify", [
+        //     'secret' => '6LdlsIwqAAAAAEPuXUxeDHHBwCGZxgJNFB37hYo_',
+        //     'response' => $request->code
+        // ]);
         $res = Http::get("https://www.google.com/recaptcha/api/siteverify", [
-            'secret' => '6LdlsIwqAAAAAEPuXUxeDHHBwCGZxgJNFB37hYo_',
+            'secret' => '6LcGsYwqAAAAAH1QBZe0LLmO9GegR0fHDOMnr3KT',
             'response' => $request->code
         ]);
         if ($res->json()["success"] == true) {
@@ -197,7 +203,8 @@ class KhachHangController extends Controller
             ]);
         }
     }
-    public function xacNhanNapTien(Request $request)
+    
+    public function xacNhanNapTien(KhachHangNapTienRequest $request)
     {
 
         $user = Auth::guard('sanctum')->user();
@@ -212,6 +219,7 @@ class KhachHangController extends Controller
         $tai_chinh->update([
             'hash'  => $ma_giao_dich
         ]);
+        
         return response()->json([
             'status'                 => 1,
             'message'                => "Đã tạo lệnh nạp tiền, vui lòng thanh toán",

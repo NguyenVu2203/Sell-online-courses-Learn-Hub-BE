@@ -14,5 +14,6 @@ class BaiViet extends Model
         'mo_ta_ngan',
         'noi_dung',
         'tinh_trang',
+        'link',
     ];
 }

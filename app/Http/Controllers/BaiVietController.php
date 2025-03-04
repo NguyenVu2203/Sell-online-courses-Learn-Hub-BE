@@ -30,7 +30,8 @@ class BaiVietController extends Controller
             'hinh_anh'          =>$request->hinh_anh,
             'mo_ta_ngan'        =>$request->mo_ta_ngan,
             'noi_dung'          =>$request->noi_dung,
-            'tinh_trang'        =>$request->tinh_trang
+            'tinh_trang'        =>$request->tinh_trang,
+            'link'        =>$request->link
         ]);
         return response()->json([
             'status'    =>  1,
@@ -96,7 +97,8 @@ class BaiVietController extends Controller
             'hinh_anh'              =>$request->hinh_anh,
             'mo_ta_ngan'            =>$request->mo_ta_ngan,
             'noi_dung'              =>$request->noi_dung,
-            'tinh_trang'            =>$request->tinh_trang
+            'tinh_trang'            =>$request->tinh_trang,
+            'link'              =>$request->link
         ]);
         return response()->json([
             'status'    =>  1,

@@ -15,7 +15,7 @@ class BaiHocCreateRequest extends FormRequest
     {
         return [
             'id_khoa_hoc'   => 'required|exists:loai_khoa_hocs,id',
-            'bai_hoc_so'    => 'required|numeric',
+            'bai_hoc_so' => 'required|numeric|min:1',
             'is_thu_phi'    => 'required|boolean',
             'tinh_trang'    => 'required|boolean',
             'tieu_de'       => 'required|min:3|max:100',
@@ -29,6 +29,7 @@ class BaiHocCreateRequest extends FormRequest
             'id_khoa_hoc.exists'    =>  'Loại khoá học không tồn tại',
             'bai_hoc_so.required'   =>  'Phải nhập thông tin bài học số mấy',
             'bai_hoc_so.numeric'    =>  'Bài học phải là số',
+            'bai_hoc_so.min' => 'Bài học số phải là số dương (lớn hơn 0)',
             'is_thu_phi.required'   =>  'Phải chọn loại thu phí',
             'is_thu_phi.boolean'    =>  'Loại thu phí chỉ được chọn theo hệ thống',
             'tinh_trang.required'   =>  'Tình trạng không được để trống',

@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             KhachHangSeeding::class,
             BaiHocSeeding::class,
             BaiVietSeeding::class,
-            TracNghiemSeeder::class,
             NhanVienSeeder::class,
             TaiChinhSeeding::class,
             ChiTietChucNangSeed::class,

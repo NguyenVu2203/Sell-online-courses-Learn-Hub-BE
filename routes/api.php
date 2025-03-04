@@ -87,14 +87,14 @@ Route::post('/admin/bai-viet/update', [BaivietController::class, 'update'])->mid
 Route::post('/admin/bai-viet/change-status', [BaivietController::class, 'changeStatus'])->middleware("nhanVienMiddle");
 Route::post('/admin/bai-viet/tim-kiem', [BaivietController::class, 'search'])->middleware("nhanVienMiddle");
 
-Route::post('/admin/trac-nghiem/create', [TracNghiemController::class, 'store'])->middleware("nhanVienMiddle");
-Route::get('/admin/trac-nghiem/data', [TracNghiemController::class, 'getdata'])->middleware("nhanVienMiddle");
+// Route::post('/admin/trac-nghiem/create', [TracNghiemController::class, 'store'])->middleware("nhanVienMiddle");
+// Route::get('/admin/trac-nghiem/data', [TracNghiemController::class, 'getdata'])->middleware("nhanVienMiddle");
 
 
-Route::post('/admin/trac-nghiem/delete', [TracNghiemController::class, 'destroy'])->middleware("nhanVienMiddle");
-Route::post('/admin/trac-nghiem/update', [TracNghiemController::class, 'update'])->middleware("nhanVienMiddle");
-Route::post('/admin/trac-nghiem/change-status', [TracNghiemController::class, 'changeStatus'])->middleware("nhanVienMiddle");
-Route::post('/admin/trac-nghiem/tim-kiem', [TracNghiemController::class, 'search'])->middleware("nhanVienMiddle");
+// Route::post('/admin/trac-nghiem/delete', [TracNghiemController::class, 'destroy'])->middleware("nhanVienMiddle");
+// Route::post('/admin/trac-nghiem/update', [TracNghiemController::class, 'update'])->middleware("nhanVienMiddle");
+// Route::post('/admin/trac-nghiem/change-status', [TracNghiemController::class, 'changeStatus'])->middleware("nhanVienMiddle");
+// Route::post('/admin/trac-nghiem/tim-kiem', [TracNghiemController::class, 'search'])->middleware("nhanVienMiddle");
 
 
 Route::get('/admin/chart/chart-tai-chinh', [ChartController::class, 'chart'])->middleware("nhanVienMiddle");
@@ -120,10 +120,12 @@ Route::post('/home-page/mua-khoa-hoc/create', [ChiTietKhoaHocController::class, 
 
 Route::post('/khach-hang/xac-nhan-nap-tien', [KhachHangController::class, 'xacNhanNapTien'])->middleware("khachHangMiddle");
 
-Route::get('/trac-nghiem/data-open', [TracNghiemController::class, 'getdataOpen'])->middleware("khachHangMiddle");
+// Route::get('/trac-nghiem/data-open', [TracNghiemController::class, 'getdataOpen'])->middleware("khachHangMiddle");
 
-Route::post('/trac-nghiem/nop-bai', [TracNghiemController::class, 'nopBai'])->middleware("khachHangMiddle");
+// Route::post('/trac-nghiem/nop-bai', [TracNghiemController::class, 'nopBai'])->middleware("khachHangMiddle");
 
 Route::post('/admin/chi-tiet-phan-quyen/create', [ChiTietPhanQuyenController::class, 'store'])->middleware("nhanVienMiddle");
 Route::post('/admin/chi-tiet-phan-quyen/data', [ChiTietPhanQuyenController::class, 'getData'])->middleware("nhanVienMiddle");
 Route::post('/admin/chi-tiet-phan-quyen/delete', [ChiTietPhanQuyenController::class, 'xoaChiTietQuyen'])->middleware("nhanVienMiddle");
+
+Route::get('/admin/lich-su-mua/data',[ChiTietKhoaHocController::class,'getDataLichSu'])->middleware("nhanVienMiddle");

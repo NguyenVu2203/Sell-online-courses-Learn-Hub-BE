@@ -27,7 +27,7 @@ class NhanVienUpdateRequest extends FormRequest
             'email'         => "required|email|unique:nhan_viens,email,". $this->id. 'id,',
             'so_dien_thoai' => "required|digits:10",
             'password'      => "required|min:6|max:30",
-            'dia_chi'       => "required",
+            'dia_chi'       => "required|max:120",
             'tinh_trang'    => "required|boolean",
             'id_quyen'      => "required",
         ];
@@ -42,9 +42,10 @@ class NhanVienUpdateRequest extends FormRequest
             'email.required'    => "Email là bắt buộc.",
             'email.email'       => "Email không đúng định dạng.",
             'email.unique'      => "Email đã tồn tại.",
-            'so_dien_thoai.*'   => "Số điện thoại là bắt buộc và phải là 10 chữ số.",
+            'so_dien_thoai.*'   => "Số điện thoại là bắt buộc và phải là 10 chữ số (không chứa ký tự).",
             'password.*'        => "Mật khẩu là bắt buộc và phải từ 6 đến 30 ký tự.",
             'dia_chi.required'  => "Địa chỉ là bắt buộc",
+            'dia_chi.max'       => "Địa chỉ không được vượt quá 120 ký tự.",
             'tinh_trang.*'      => "Tình trạng là bắt buộc.",
             'id_quyen.*'        => "Quyền là bắt buộc",
         ];

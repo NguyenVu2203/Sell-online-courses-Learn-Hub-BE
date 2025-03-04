@@ -7,6 +7,8 @@ use App\Models\KhachHang;
 use App\Models\LoaiKhoaHoc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ChiTietPhanQuyen;
+
 
 class ChiTietKhoaHocController extends Controller
 {
@@ -56,6 +58,27 @@ class ChiTietKhoaHocController extends Controller
                                 ->get();
         return response()->json([
             'data'  =>$data
+        ]);
+    }
+
+    public function getDataLichSu()
+    {
+        $id_chuc_nang = 49; //Lấy dữ liệu khách hàng
+        $id_quyen     = Auth::guard('sanctum')->user()->id_quyen;
+        $check        = ChiTietPhanQuyen::where('id_quyen', $id_quyen)->where('id_chuc_nang', $id_chuc_nang)->first();
+        if (!$check) {
+            return response()->json([
+                'status'    =>  0,
+                'message'   =>  'Bạn không có quyền thực hiện chức năng này!'
+            ]);
+        }
+        $data = ChiTietKhoaHoc::select('chi_tiet_khoa_hocs.id_khoa_hoc', 'chi_tiet_khoa_hocs.so_tien_mua','chi_tiet_khoa_hocs.id_khach_hang',
+                                        'chi_tiet_khoa_hocs.created_at','khach_hangs.ho_va_ten','khach_hangs.email','loai_khoa_hocs.ten_khoa_hoc')
+                                        ->join('loai_khoa_hocs','loai_khoa_hocs.id','chi_tiet_khoa_hocs.id_khoa_hoc')
+                                        ->join('khach_hangs','khach_hangs.id','chi_tiet_khoa_hocs.id_khach_hang')
+                                        ->get();
+        return response()->json([
+            'data' => $data
         ]);
     }
 }

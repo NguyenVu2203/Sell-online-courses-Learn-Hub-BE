@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('mo_ta_ngan');
             $table->longText('noi_dung');
             $table->integer('tinh_trang');
+            $table->longText('link');
             $table->timestamps();
         });
     }

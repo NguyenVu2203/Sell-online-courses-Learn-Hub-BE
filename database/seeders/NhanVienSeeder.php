@@ -19,19 +19,19 @@ class NhanVienSeeder extends Seeder
 
         DB::table('nhan_viens')->insert([
             [
-                'email'             =>  'quoclongdng@gmail.com',
+                'email'             =>  'nguyenvanvien@gmail.com',
                 'password'          =>  '123456',
-                'ho_va_ten'         =>  'Nguyễn Quốc Long',
-                'so_dien_thoai'     =>  '0905523543',
+                'ho_va_ten'         =>  'Nguyễn Văn Viên',
+                'so_dien_thoai'     =>  '0356841445',
                 'dia_chi'           =>  'Đà Nẵng',
                 'tinh_trang'        =>  1,
                 'id_quyen'          =>  1,
             ],
             [
-                'email'             =>  'dzfullstack@gmail.com',
+                'email'             =>  'nguyenlongvu@gmail.com',
                 'password'          =>  '123456',
-                'ho_va_ten'         =>  'Nguyễn Quốc Long',
-                'so_dien_thoai'     =>  '0388824999',
+                'ho_va_ten'         =>  'Nguyễn Long Vũ',
+                'so_dien_thoai'     =>  '0914799999',
                 'dia_chi'           =>  'Đà Nẵng',
                 'tinh_trang'        =>  1,
                 'id_quyen'          =>  2,
